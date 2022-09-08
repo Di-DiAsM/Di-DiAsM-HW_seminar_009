@@ -11,12 +11,13 @@ int n = Convert.ToInt32(Console.ReadLine());
 //***********************************************************************************
 string NumbersRecMinus(int a, int b)
 {
-    if (a == n) return $"{a} ";
-    else return  $"{a} " + NumbersRecMinus(a + 1, b) ;
+    if (a == b) return $"{a} ";
+    else if (a < b) return $"{a} " + NumbersRecMinus(a + 1, b);
+    else if (a > b) return  $"{a} "+ NumbersRecMinus(a - 1, b);
+    else return string.Empty;
 }
 
 Console.WriteLine(NumbersRecMinus(m, n));
-
 
 //***********************************************************************************
 // string NumbersRecMinus(int a, int b)
@@ -30,11 +31,11 @@ Console.WriteLine(NumbersRecMinus(m, n));
 
 //***********************************************************************************
 
-// void NumbersRecPlus(int a = 1, int b)
+// void NumbersRecPlus(int a, int b)
 // {
 //     if (a < b) return;
 //     Console.Write($"{a} ");
-//     NumbersRecMinus(a - 1, b);
+//     NumbersRecPlus(a - 1, b);
 // }
 
 // NumbersRecPlus(10, 1);
