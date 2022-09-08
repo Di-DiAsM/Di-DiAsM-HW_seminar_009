@@ -12,7 +12,9 @@ int n = Convert.ToInt32(Console.ReadLine());
 int NumbersSumRec(int a, int b)
 {
     if (a == b) return b;
-    else return b + NumbersSumRec(a, b - 1);
+    else if (a < b) return b + NumbersSumRec(a, b - 1);
+    else if (a > b) return b + NumbersSumRec(a, b + 1);
+    else return b;
 }
 
 Console.WriteLine(NumbersSumRec(m, n));
